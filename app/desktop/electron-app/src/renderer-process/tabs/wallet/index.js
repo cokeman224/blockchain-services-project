@@ -11,6 +11,10 @@ const {
   IPC_EVENT_OPEN_MESSAGE_BOX
 } = require('../../../main-process/constants/ipc-event-constants');
 
+/**
+ * Initializes wallet tab with functionality for creating, importing, and managing wallets
+ * Handles file operations for wallet credentials and clipboard operations for addresses
+ */
 module.exports = function walletTab({ ipcRenderer, clipboard }) {
   const mainElement = document.getElementById('pills-wallet');
   mainElement.innerHTML = ui();

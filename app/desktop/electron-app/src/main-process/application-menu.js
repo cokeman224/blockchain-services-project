@@ -1,6 +1,9 @@
 'use strict';
 const { Menu, shell } = require('electron');
 
+/**
+ * Returns macOS-specific menu items if running on macOS
+ */
 const macOSSpecificMenu = () => {
   if (process.platform === 'darwin') {
     return [{ role: 'appMenu' }];
@@ -9,6 +12,9 @@ const macOSSpecificMenu = () => {
   }
 };
 
+/**
+ * Configures the application menu bar with platform-specific options
+ */
 function applicationMenu() {
   const template = [
     ...macOSSpecificMenu(),

@@ -1,5 +1,9 @@
 import Chart from "react-apexcharts";
 
+/**
+ * Bar chart component displaying coins per mined block
+ * Calculates and displays average coins across all blocks
+ */
 function MinedBlockCoinsChart(props) {
   const { blocks } = props;
 

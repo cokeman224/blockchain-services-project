@@ -1,3 +1,6 @@
+/**
+ * Table row component for displaying mined transaction details
+ */
 function MinedTransactionRow(props) {
   const {
     timestamp,

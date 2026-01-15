@@ -1,6 +1,10 @@
 import AxiosHttpAction from './axios-http-action';
 import { v4 as uuidV4 } from 'uuid';
 
+/**
+ * API handler for blockchain exchange service endpoints
+ * Provides methods for querying blockchain statistics, blocks, and transactions
+ */
 function ExchangeApiHandler({ axiosInstance }) {
   const httpAction = AxiosHttpAction(axiosInstance);
 

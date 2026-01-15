@@ -1,6 +1,9 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
+/**
+ * Top navigation bar component with links to Home and Explorer pages
+ */
 function NavigationBar() {
   return (
     <Navbar fixed="top" bg="light" expand="lg">

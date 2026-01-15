@@ -3,6 +3,10 @@
 const axios = require('axios');
 const uuid = require('uuid').v4;
 
+/**
+ * REST client wrapper for making HTTP requests to blockchain services
+ * Includes trace ID and app identification headers for request tracking
+ */
 function RestClient() {
   const get = async ({ url }) => {
     try {
@@ -41,6 +45,10 @@ function RestClient() {
   return { get, post };
 }
 
+/**
+ * API client factory for blockchain service interactions
+ * Provides methods for wallet operations, coin transactions, and balance queries
+ */
 module.exports = function Apis() {
   const restClient = RestClient();
 

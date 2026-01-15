@@ -6,11 +6,16 @@ import { Download, Box } from "react-bootstrap-icons";
 import ApiHandlers from '../api-handlers';
 const apiHandler = new ApiHandlers();
 
+/**
+ * Home page component displaying blockchain statistics
+ * Polls for updated statistics every 5 seconds
+ */
 function HomePage() {
   const [blockchainStatistics, setBlockchainStatistics] = useState({});
 
   const timestamp = () => new Date().toISOString();
 
+  // Fetch blockchain statistics on mount and set up polling interval
   useEffect(() => {
     console.log(timestamp(), 'Entered HomePage useEffect');
     async function getStats()  {

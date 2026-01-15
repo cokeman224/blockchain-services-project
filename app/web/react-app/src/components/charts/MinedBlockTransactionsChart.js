@@ -1,5 +1,9 @@
 import Chart from "react-apexcharts";
 
+/**
+ * Bar chart component displaying transaction count per mined block
+ * Calculates and displays average transactions across all blocks
+ */
 function MinedBlockTransactionsChart(props) {
   const { blocks } = props;
 

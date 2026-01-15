@@ -1,3 +1,7 @@
+/**
+ * HTTP action wrapper for axios requests
+ * Provides standardized error handling and default configurations
+ */
 export default function AxiosHttpAction(axiosInstance) {
   const post = async ({
     url,
