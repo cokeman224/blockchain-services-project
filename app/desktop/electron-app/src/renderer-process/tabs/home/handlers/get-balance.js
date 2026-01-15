@@ -5,6 +5,10 @@ const {
 } = require('../../../../main-process/constants/ipc-event-constants');
 const { NUMBER_OF_DECIMAL_PLACES } = require('../../../../main-process/constants');
 
+/**
+ * Sets up balance query functionality with automatic refresh every 60 seconds
+ * Handles user-triggered balance updates via refresh button
+ */
 module.exports = function getBalance({ ipcRenderer, apis }) {
   let host, port, address;
   const coinBalanceElement = document.getElementById('coin-balance');

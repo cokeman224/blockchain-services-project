@@ -1,3 +1,6 @@
+/**
+ * Table row component for displaying pending transactions from mempool
+ */
 function MempoolTransactionRow(props) {
   const {
     timestamp,

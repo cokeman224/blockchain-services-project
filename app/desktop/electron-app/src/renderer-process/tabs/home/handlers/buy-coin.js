@@ -5,6 +5,10 @@ const {
   IPC_EVENT_OPEN_MESSAGE_BOX
 } = require('../../../../main-process/constants/ipc-event-constants');
 
+/**
+ * Handles coin purchase functionality including fee calculation and transaction submission
+ * Calculates total purchase amount based on exchange rate and number of coins
+ */
 module.exports = function buyCoin({ ipcRenderer, apis }) {
   let host, port, address;
 

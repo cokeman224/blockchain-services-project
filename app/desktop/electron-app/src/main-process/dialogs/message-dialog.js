@@ -2,6 +2,10 @@
 
 const { dialog } = require('electron');
 
+/**
+ * Dialog utility for file operations and user notifications
+ * Provides methods for opening/saving JSON files and displaying message boxes
+ */
 module.exports = function messageDialog(browserWindow, electronDialog = dialog) {
   const showOpenDialog = async option => {
     const result = await electronDialog.showOpenDialog(browserWindow, option);

@@ -5,6 +5,10 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ExplorerPage from './pages/ExplorerPage';
 
+/**
+ * Main application component with routing
+ * Provides navigation between home and blockchain explorer pages
+ */
 function App() {
   return (
     <BrowserRouter>

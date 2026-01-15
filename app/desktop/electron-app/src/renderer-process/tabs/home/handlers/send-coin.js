@@ -6,6 +6,10 @@ const {
 } = require('../../../../main-process/constants/ipc-event-constants');
 const { getSignature } = require('../../../../helpers/signature');
 
+/**
+ * Handles coin transfer functionality with transaction signing
+ * Validates receiver address, transaction amount, and fee before submission
+ */
 module.exports = function sendCoin({ ipcRenderer, apis }) {
   let host, port, address, publicKey, privateKey;
 

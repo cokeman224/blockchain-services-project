@@ -10,6 +10,10 @@ const {
   IPC_EVENT_OPEN_MESSAGE_BOX
 } = require('./constants/ipc-event-constants');
 
+/**
+ * Sets up IPC handlers for file operations (open, save, message dialogs)
+ * Handles JSON file selection and saving for wallet management
+ */
 module.exports = function fileManagement(
   browserWindow,
   electronDialog = dialog,

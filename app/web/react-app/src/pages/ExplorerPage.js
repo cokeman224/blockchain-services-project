@@ -12,6 +12,10 @@ import ApiHandlers from "../api-handlers";
 
 const apiHandler = new ApiHandlers();
 
+/**
+ * Blockchain explorer page displaying blocks, transactions, and statistics
+ * Polls for updated data every 5 seconds using parallel API calls
+ */
 function ExplorerPage() {
   const [latestBlocks, setLatestBlocks] = useState([]);
   const [latestPendingTransactions, setLatestPendingTransactions] = useState([]);
@@ -20,6 +24,7 @@ function ExplorerPage() {
 
   const timestamp = () => new Date().toISOString();
 
+  // Fetch all explorer data in parallel and set up polling interval
   useEffect(() => {
     console.log(timestamp(), "Entered ExplorerPage useEffect");
 

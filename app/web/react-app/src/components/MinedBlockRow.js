@@ -1,3 +1,6 @@
+/**
+ * Table row component for displaying mined block information
+ */
 function MinedBlockRow(props) {
   const { index, coins, numberOfTransactions, timestamp } = props.block;
   return (

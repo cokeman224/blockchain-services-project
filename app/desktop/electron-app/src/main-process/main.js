@@ -9,18 +9,23 @@ const {
   IPC_EVENT_USER_PREFERENCES
 } = require('./constants/ipc-event-constants');
 
-// global variable to prevent it from getting garbage collected.
+// Global reference to main window to prevent garbage collection
 let mainWindow;
 const isDevEnv = process.env.COINCOIN_ENV === 'dev';
 
 const userDataLocation = (app || remote.app).getPath('userData');
 
+/**
+ * Creates and configures the main application window
+ * Restores previous window position and size if available
+ */
 function createWindow() {
   const windowState = windowStateKeeper({
     defaultWidth: 400,
     defaultHeight: 960
   });
 
+  // Restrict window size in production, allow resizing in development
   const maxDimensions = !isDevEnv ? { maxWidth: 400, maxHeight: 960 } : {};
 
   mainWindow = new BrowserWindow({
@@ -52,11 +57,13 @@ function createWindow() {
     mainWindow = null;
   });
 
+  // Open external links in default browser instead of navigating in-app
   mainWindow.webContents.on('will-navigate', function (event, url) {
     event.preventDefault();
     shell.openExternal(url);
   });
 
+  // Handle IPC request for user data location
   ipcMain.on(IPC_EVENT_GET_USER_PREFERENCES, event => {
     event.reply(IPC_EVENT_USER_PREFERENCES, { userDataLocation });
   });
